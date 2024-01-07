@@ -82,9 +82,9 @@ class Board:
 
     def __str__(self): #вывод кораблей на доску
         res = ""
-        res += " | 1 | 2 | 3 | 4 | 5 | 6 |"
+        res += "  |1|2|3|4|5|6|"
         for i , row in  enumerate(self.field):
-            res += f"\n{i+1} | " + "|".join(row) + " |"
+            res += f"\n{i+1} |" + "|".join(row) + "|"
         if self.hid:
             res = res.replace("■", "O") #скрытие доски противника
         return res
@@ -115,7 +115,7 @@ class Board:
                     print("Корабль ранен!")
                     return True
 
-        self.field[d.x][d.y] = "."
+        self.field[d.x][d.y] = "T"
         print("Мимо!")
         return False
 
